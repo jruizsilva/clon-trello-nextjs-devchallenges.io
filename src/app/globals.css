@@ -15,3 +15,7 @@ body {
     text-wrap: balance;
   }
 }
+* {
+  outline-width: 1px;
+  outline-color: #666;
+}
