@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { IoMdSettings } from 'react-icons/io'
 import {
   MdAccountCircle,
+  MdApps,
   MdArrowDropDown,
   MdLogout
 } from 'react-icons/md'
@@ -33,8 +34,8 @@ const MenuUser = ({ className }: MenuUserProps) => {
         <MdArrowDropDown />
       </Popover.Button>
 
-      <Popover.Panel className='absolute right-0 top-[58px]'>
-        <div className='flex flex-col w-[192px] rounded-xl border shadow-md p-4'>
+      <Popover.Panel className='absolute right-0 top-[58px] rounded-xl bg-white w-[192px] border shadow-md p-4'>
+        <div className='flex flex-col'>
           <div className='border-b flex flex-col'>
             <Button
               className='h-[39px] mb-2 rounded-lg bg-[#f2f2f2] hover:bg-[#e2e2e2] p-3 flex items-center gap-2'
@@ -47,6 +48,14 @@ const MenuUser = ({ className }: MenuUserProps) => {
               }
             >
               <span className='text-xs font-medium'>Dashboard</span>
+            </Button>
+            <Button
+              className='h-[39px] mb-2 rounded-lg hover:bg-[#e2e2e2] p-3 flex items-center gap-2'
+              icon={
+                <CustomIcon icon={MdApps} fontSize={20} fill='#333' />
+              }
+            >
+              <span className='text-xs font-medium'>All board</span>
             </Button>
             <Button
               className='h-[39px] mb-2 rounded-lg hover:bg-[#e2e2e2] p-3 flex items-center gap-2 w-full'

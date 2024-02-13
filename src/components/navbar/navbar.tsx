@@ -1,16 +1,12 @@
 'use client'
-import { Popover } from '@headlessui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaUserGroup } from 'react-icons/fa6'
-import { MdAccountCircle, MdLogout, MdMenu } from 'react-icons/md'
-import Button from '../button'
-import MenuUser from './menuuser'
-import { IoMdSettings } from 'react-icons/io'
 import { MdApps } from 'react-icons/md'
+import Button from '../button'
+import InputSearch from './inputsearch'
 import CustomIcon from './customicon'
 import MenuMobile from './menumobile'
-import ButtonSearch from './buttonsearch'
+import MenuUser from './menuuser'
 
 interface NavbarProps {}
 
@@ -34,21 +30,24 @@ const Navbar = (props: NavbarProps) => {
           </h1>
         </div>
         <div className='ps-6 hidden lg:flex items-center flex-1 gap-11'>
-          <Button
-            icon={
-              <CustomIcon
-                icon={MdApps}
-                fontSize={12}
-                fill='#828282'
-              />
-            }
-            className='flex items-center gap-2 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'
-          >
-            <span className='text-xs font-medium text-[#828282]'>
-              All board
-            </span>
-          </Button>
-          <ButtonSearch className='ms-auto' />
+          <Link href='/boards'>
+            <Button
+              icon={
+                <CustomIcon
+                  icon={MdApps}
+                  fontSize={12}
+                  fill='#828282'
+                />
+              }
+              className='flex items-center gap-2 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'
+            >
+              <span className='text-xs font-medium text-[#828282]'>
+                All board
+              </span>
+            </Button>
+          </Link>
+
+          <InputSearch className='ms-auto' />
           <MenuUser />
         </div>
         <MenuMobile />
