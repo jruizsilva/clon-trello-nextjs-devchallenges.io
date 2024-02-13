@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import Button from './button'
+import MenuUser from './menuuser'
 
 interface NavbarProps {}
 
@@ -46,7 +47,7 @@ const Navbar = (props: NavbarProps) => {
         <div className='ps-6 flex justify-between items-center flex-1'>
           <Button />
           <ButtonSearch />
-
+          <MenuUser />
           {/* Desktop Navigation */}
           {/* <ul className='hidden md:flex'>
             {navItems.map((item) => (
