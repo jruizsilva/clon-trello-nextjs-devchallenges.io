@@ -1,10 +1,8 @@
-import React from 'react'
-
 interface ButtonProps {}
 
 const Button = (props: ButtonProps) => {
   return (
-    <button className='flex items-center gap-3 w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'>
+    <button className='flex items-center gap-3 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'>
       <svg
         className='w-3 h-3 fill-[#828282]'
         xmlns='http://www.w3.org/2000/svg'

@@ -9,12 +9,16 @@ import {
   MdLogout
 } from 'react-icons/md'
 
-interface MenuUserProps {}
+interface MenuUserProps {
+  className?: string
+}
 
-const MenuUser = (props: MenuUserProps) => {
+const MenuUser = ({ className }: MenuUserProps) => {
   return (
-    <Popover className='relative'>
-      <Popover.Button className='h-8 flex items-center gap-3 rounded-md'>
+    <Popover className={`relative ${className}`}>
+      <Popover.Button
+        className={`h-8 flex items-center gap-3 rounded-md`}
+      >
         <Image
           src='https://i.pravatar.cc/32?img=3'
           alt='user avatar'
@@ -22,7 +26,9 @@ const MenuUser = (props: MenuUserProps) => {
           width={32}
           height={32}
         />
-        <span className='font-bold text-xs'>Xanthe Neal</span>
+        <span className='font-bold text-xs text-nowrap max-w-[10ch] overflow-hidden text-ellipsis'>
+          Xanthe Ndadasdsasaeadsadsasdadassl
+        </span>
         <MdArrowDropDown />
       </Popover.Button>
 
