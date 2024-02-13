@@ -1,37 +1,29 @@
 import { UsersIcon } from '@/icons/usersicon'
 import { Popover } from '@headlessui/react'
+import Image from 'next/image'
 import { FaUserGroup } from 'react-icons/fa6'
 import { IoMdSettings } from 'react-icons/io'
-import { MdAccountCircle, MdLogout } from 'react-icons/md'
+import {
+  MdAccountCircle,
+  MdArrowDropDown,
+  MdLogout
+} from 'react-icons/md'
 
 interface MenuUserProps {}
-
-const solutions = [
-  {
-    name: 'Insights',
-    description: 'Measure actions your users take',
-    href: '##',
-    icon: IconOne
-  },
-  {
-    name: 'Automations',
-    description: 'Create your own targeted content',
-    href: '##',
-    icon: IconTwo
-  },
-  {
-    name: 'Reports',
-    description: 'Keep track of your growth',
-    href: '##',
-    icon: IconThree
-  }
-]
 
 const MenuUser = (props: MenuUserProps) => {
   return (
     <Popover className='relative'>
-      <Popover.Button className='h-8 font-bold'>
-        Xanthe Neal
+      <Popover.Button className='h-8 flex items-center gap-3 rounded-md'>
+        <Image
+          src='https://i.pravatar.cc/32?img=3'
+          alt='user avatar'
+          className='rounded-md'
+          width={32}
+          height={32}
+        />
+        <span className='font-bold text-xs'>Xanthe Neal</span>
+        <MdArrowDropDown />
       </Popover.Button>
 
       <Popover.Panel className='absolute right-0 top-[58px]'>
