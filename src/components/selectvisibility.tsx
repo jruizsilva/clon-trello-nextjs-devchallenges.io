@@ -8,11 +8,15 @@ import CustomIcon from './navbar/customicon'
 import { useState } from 'react'
 import { clsx } from 'clsx'
 
-interface Props {}
+interface Props {
+  className?: string
+}
 
 type Visibility = 'public' | 'private'
 
-export default function SelectVisibility(props: Props): JSX.Element {
+export default function SelectVisibility({
+  className
+}: Props): JSX.Element {
   const [boardVisibility, setBoardVisibility] =
     useState<Visibility>('private')
 
@@ -27,7 +31,7 @@ export default function SelectVisibility(props: Props): JSX.Element {
         icon={
           <CustomIcon icon={IoMdLock} fontSize={12} fill='#828282' />
         }
-        className='flex items-center gap-2 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'
+        className={`flex items-center gap-2 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2] ${className}`}
       >
         <span className='text-xs font-medium text-[#828282]'>
           {boardVisibility === 'public' ? 'Public' : 'Private'}
@@ -39,7 +43,7 @@ export default function SelectVisibility(props: Props): JSX.Element {
           'absolute top-[45px] w-[234px] h-[199px] px-3 py-3 bg-white shadow-lg border border-[#e0e0e0] rounded-xl'
         }
       >
-        <header className='flex flex-col gap-1 mb-4'>
+        <header className='flex flex-col items-start gap-1 mb-4'>
           <h4 className='font-semibold text-[#4f4f4f] text-xs'>
             Visibility
           </h4>

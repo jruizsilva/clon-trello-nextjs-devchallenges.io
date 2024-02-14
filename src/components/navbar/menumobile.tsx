@@ -5,6 +5,7 @@ import { MdMenu, MdAccountCircle, MdLogout } from 'react-icons/md'
 import InputSearch from './inputsearch'
 import Button from '../button'
 import CustomIcon from './customicon'
+import Link from 'next/link'
 
 interface Props {}
 
@@ -23,30 +24,36 @@ export default function MenuMobile(props: Props): JSX.Element {
             <InputSearch className='w-full' />
           </div>
           <div className='border-b flex flex-col'>
-            <Button
-              className='h-[39px] mb-2 rounded-lg bg-[#f2f2f2] hover:bg-[#e2e2e2] p-3 flex items-center gap-2'
-              icon={
-                <CustomIcon
-                  icon={MdAccountCircle}
-                  fontSize={20}
-                  fill='#333'
-                />
-              }
-            >
-              <span className='text-xs font-medium'>Dashboard</span>
-            </Button>
-            <Button
-              className='h-[39px] mb-2 rounded-lg hover:bg-[#e2e2e2] p-3 flex items-center gap-2'
-              icon={
-                <CustomIcon
-                  icon={FaUserGroup}
-                  fontSize={20}
-                  fill='#333'
-                />
-              }
-            >
-              <span className='text-xs font-medium'>All boards</span>
-            </Button>
+            <Link href={'/'} className='w-full'>
+              <Button
+                className='h-[39px] mb-2 rounded-lg bg-[#f2f2f2] hover:bg-[#e2e2e2] p-3 flex items-center gap-2 w-full'
+                icon={
+                  <CustomIcon
+                    icon={MdAccountCircle}
+                    fontSize={20}
+                    fill='#333'
+                  />
+                }
+              >
+                <span className='text-xs font-medium'>Dashboard</span>
+              </Button>
+            </Link>
+            <Link href={'/boards'} className='w-full'>
+              <Button
+                className='h-[39px] mb-2 rounded-lg hover:bg-[#e2e2e2] p-3 flex items-center gap-2 w-full'
+                icon={
+                  <CustomIcon
+                    icon={FaUserGroup}
+                    fontSize={20}
+                    fill='#333'
+                  />
+                }
+              >
+                <span className='text-xs font-medium'>
+                  All boards
+                </span>
+              </Button>
+            </Link>
             <Button
               className='h-[39px] mb-2 rounded-lg hover:bg-[#e2e2e2] p-3 flex items-center gap-2'
               icon={

@@ -2,14 +2,17 @@
 
 import Button from '@/components/button'
 import CustomIcon from '@/components/navbar/customicon'
+import SelectVisibility from '@/components/selectvisibility'
 import { Dialog, Transition } from '@headlessui/react'
+import Image from 'next/image'
 import { Fragment, useState } from 'react'
-import { MdAdd } from 'react-icons/md'
+import { IoMdLock } from 'react-icons/io'
+import { MdAdd, MdImage } from 'react-icons/md'
 
 interface AddBoardModalProps {}
 
 const AddBoardModal = (props: AddBoardModalProps) => {
-  let [isOpen, setIsOpen] = useState(false)
+  let [isOpen, setIsOpen] = useState(true)
 
   function closeModal() {
     setIsOpen(false)
@@ -60,29 +63,56 @@ const AddBoardModal = (props: AddBoardModalProps) => {
                 leaveFrom='opacity-100 scale-100'
                 leaveTo='opacity-0 scale-95'
               >
-                <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
-                  <Dialog.Title
-                    as='h3'
-                    className='text-lg font-medium leading-6 text-gray-900'
-                  >
-                    Payment successful
-                  </Dialog.Title>
-                  <div className='mt-2'>
-                    <p className='text-sm text-gray-500'>
-                      Your payment has been successfully submitted.
-                      We’ve sent you an email with all of the details
-                      of your order.
-                    </p>
+                <Dialog.Panel className='w-[307px] h-[271px] rounded-lg bg-white px-6 pt-[27px] pb-[17px] shadow-md transition-all'>
+                  <div className='w-[259px] h-[78px] flex items-center overflow-hidden rounded-lg mb-[10px]'>
+                    <Image
+                      src='/background-board.avif'
+                      alt='background image'
+                      width={259}
+                      height={78}
+                      className='rounded-lg'
+                    />
                   </div>
-
-                  <div className='mt-4'>
-                    <button
-                      type='button'
-                      className='inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'
-                      onClick={closeModal}
+                  <input
+                    type='text'
+                    className='py-2 ps-3 w-full h-[34px] text-[10px] shadow-md rounded-lg border mb-[21px]'
+                    placeholder='Add board title...'
+                  />
+                  <div className='flex gap-5 mb-[22px]'>
+                    <Button
+                      icon={
+                        <CustomIcon
+                          icon={MdImage}
+                          fontSize={12}
+                          fill='#828282'
+                        />
+                      }
+                      className='flex items-center gap-2 min-w-[120px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'
                     >
-                      Got it, thanks!
-                    </button>
+                      <span className='text-xs font-medium text-[#828282]'>
+                        Cover
+                      </span>
+                    </Button>
+                    <SelectVisibility className='min-w-[120px]' />
+                  </div>
+                  <div className='flex gap-4'>
+                    <Button
+                      className='ml-auto'
+                      onClick={() => closeModal()}
+                    >
+                      <span className='text-[10px] text-[#828282]'>
+                        Cancel
+                      </span>
+                    </Button>
+                    <Button
+                      onClick={openModal}
+                      icon={<CustomIcon icon={MdAdd} fill='white' />}
+                      className='w-[74px] h-[30px] rounded-lg bg-[#2f80ed] flex justify-center items-center gap-1'
+                    >
+                      <span className='text-[10px] text-white font-medium'>
+                        Create
+                      </span>
+                    </Button>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
