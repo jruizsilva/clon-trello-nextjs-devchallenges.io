@@ -1,5 +1,5 @@
-import { notoSans } from '@/app/layout'
 import Avatar from '@/components/avatar'
+import { notoSans } from '@/fonts/fonts'
 import Image from 'next/image'
 
 interface Props {}
