@@ -4,11 +4,17 @@ interface ButtonProps {
   icon?: ReactNode
   children: ReactNode
   className?: string
+  onClick?: () => void
 }
 
-const Button = ({ icon: Icon, children, className }: ButtonProps) => {
+const Button = ({
+  icon: Icon,
+  children,
+  className,
+  onClick
+}: ButtonProps) => {
   return (
-    <button className={className}>
+    <button className={className} onClick={onClick}>
       {Icon ?? null}
 
       {children}
