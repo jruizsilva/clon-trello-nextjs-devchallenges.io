@@ -25,13 +25,13 @@ export default function SelectVisibility({
   }
 
   return (
-    <Popover className='relative'>
+    <Popover className={`relative z-20 ${className}`}>
       <Popover.Button
         as={Button}
         icon={
           <CustomIcon icon={IoMdLock} fontSize={12} fill='#828282' />
         }
-        className={`flex items-center gap-2 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2] ${className}`}
+        className={`flex items-center gap-2 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]`}
       >
         <span className='text-xs font-medium text-[#828282]'>
           {boardVisibility === 'public' ? 'Public' : 'Private'}

@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 interface ButtonProps {
   icon?: ReactNode
-  children: ReactNode
+  children?: ReactNode
   className?: string
   onClick?: () => void
 }

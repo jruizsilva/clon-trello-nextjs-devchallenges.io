@@ -93,7 +93,7 @@ const AddBoardModal = (props: AddBoardModalProps) => {
                         Cover
                       </span>
                     </Button>
-                    <SelectVisibility className='min-w-[120px]' />
+                    <SelectVisibility />
                   </div>
                   <div className='flex gap-4'>
                     <Button

@@ -11,7 +11,7 @@ interface Props {}
 
 export default function MenuMobile(props: Props): JSX.Element {
   return (
-    <Popover className={'relative'}>
+    <Popover className={'relative z-30'}>
       <Popover.Button>
         <MdMenu fontSize={32} className='lg:hidden' />
       </Popover.Button>

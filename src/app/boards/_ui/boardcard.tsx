@@ -22,9 +22,21 @@ export default function BoardCard(props: Props): JSX.Element {
       </h3>
       <div className='flex gap-3 items-center'>
         <div className='flex gap-3'>
-          <Avatar src='https://i.pravatar.cc/28?img=7' />
-          <Avatar src='https://i.pravatar.cc/28?img=8' />
-          <Avatar src='https://i.pravatar.cc/28?img=9' />
+          <Avatar
+            src='https://i.pravatar.cc/28?img=7'
+            width={28}
+            height={28}
+          />
+          <Avatar
+            src='https://i.pravatar.cc/28?img=8'
+            width={28}
+            height={28}
+          />
+          <Avatar
+            src='https://i.pravatar.cc/28?img=9'
+            width={28}
+            height={28}
+          />
         </div>
         <span
           className={`text-xs font-medium text-[#bdbdbd] ${notoSans.className}`}
