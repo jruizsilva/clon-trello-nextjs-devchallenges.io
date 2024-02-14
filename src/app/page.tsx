@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <header className='flex justify-between mt-[35px] px-6'>
         <div className='flex items-center'>
-          <SelectVisibility className='mr-4 md:mr-[19px]' />
+          {/* <SelectVisibility className='mr-4 md:mr-[19px]' /> */}
           <AvatarList />
           <Button
             icon={
