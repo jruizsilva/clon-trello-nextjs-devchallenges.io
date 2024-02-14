@@ -5,10 +5,21 @@ import { IoMdLock } from 'react-icons/io'
 import { MdLock, MdPublic } from 'react-icons/md'
 import Button from './button'
 import CustomIcon from './navbar/customicon'
+import { useState } from 'react'
+import { clsx } from 'clsx'
 
 interface Props {}
 
+type Visibility = 'public' | 'private'
+
 export default function SelectVisibility(props: Props): JSX.Element {
+  const [boardVisibility, setBoardVisibility] =
+    useState<Visibility>('private')
+
+  const changeVisibility = (visibility: Visibility) => {
+    setBoardVisibility(visibility)
+  }
+
   return (
     <Popover className='relative'>
       <Popover.Button
@@ -19,7 +30,7 @@ export default function SelectVisibility(props: Props): JSX.Element {
         className='flex items-center gap-2 min-w-[108px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'
       >
         <span className='text-xs font-medium text-[#828282]'>
-          Private
+          {boardVisibility === 'public' ? 'Public' : 'Private'}
         </span>
       </Popover.Button>
 
@@ -37,7 +48,15 @@ export default function SelectVisibility(props: Props): JSX.Element {
           </p>
         </header>
         <div className={`flex flex-col gap-2 ${notoSans.className}`}>
-          <button className='flex flex-col gap-1  bg-[#f2f2f2] h-[58px] rounded-lg p-3'>
+          <button
+            className={clsx(
+              `flex flex-col gap-1 h-[58px] rounded-lg p-3`,
+              {
+                'bg-[#f2f2f2]': boardVisibility === 'public'
+              }
+            )}
+            onClick={() => changeVisibility('public')}
+          >
             <div className='flex gap-2'>
               <MdPublic fill='#4F4F4F' />
               <span className='text-xs font-medium text-[#4F4F4F]'>
@@ -49,7 +68,15 @@ export default function SelectVisibility(props: Props): JSX.Element {
               Anyone on the internet can see this.
             </span>
           </button>
-          <button className='flex flex-col gap-1 h-[58px] rounded-lg p-3'>
+          <button
+            className={clsx(
+              `flex flex-col gap-1 h-[58px] rounded-lg p-3`,
+              {
+                'bg-[#f2f2f2]': boardVisibility === 'private'
+              }
+            )}
+            onClick={() => changeVisibility('private')}
+          >
             <div className='flex gap-2'>
               <MdLock fill='#4F4F4F' />
               <span className='text-xs font-medium text-[#4F4F4F]'>
