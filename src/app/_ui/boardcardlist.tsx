@@ -5,6 +5,8 @@ import { MdMoreHoriz } from 'react-icons/md'
 import BoardCard from './boardcard'
 import AddButton from './addbutton'
 import BoardInviteButton from './boardinvitebutton'
+import { Menu } from '@headlessui/react'
+import BoardCardListMenu from './boardcardlistmenu'
 
 interface Props {
   title: string
@@ -19,7 +21,7 @@ export default function BoardCardList({ title }: Props): JSX.Element {
         >
           {title}
         </h3>
-        <Button
+        {/* <Button
           icon={
             <CustomIcon
               icon={MdMoreHoriz}
@@ -27,7 +29,8 @@ export default function BoardCardList({ title }: Props): JSX.Element {
               fill='#828282'
             />
           }
-        />
+        /> */}
+        <BoardCardListMenu />
       </header>
       <div className='mb-6 flex flex-col gap-6'>
         <BoardCard
