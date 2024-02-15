@@ -4,6 +4,7 @@ import { poppins } from '@/fonts/fonts'
 import { MdMoreHoriz } from 'react-icons/md'
 import BoardCard from './boardcard'
 import AddButton from './addbutton'
+import BoardInviteButton from './boardinvitebutton'
 
 interface Props {
   title: string

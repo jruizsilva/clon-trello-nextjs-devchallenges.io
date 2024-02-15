@@ -2,7 +2,7 @@ import { Popover } from '@headlessui/react'
 import { FaUserGroup } from 'react-icons/fa6'
 import { IoMdSettings } from 'react-icons/io'
 import { MdMenu, MdAccountCircle, MdLogout } from 'react-icons/md'
-import InputSearch from './inputsearch'
+import InputSearch from '../inputsearch'
 import Button from '../button'
 import CustomIcon from './customicon'
 import Link from 'next/link'
@@ -21,7 +21,11 @@ export default function MenuMobile(props: Props): JSX.Element {
             <h1 className='text-lg font-medium text-nowrap mb-2'>
               Devchallenges Board
             </h1>
-            <InputSearch className='w-full' />
+            <InputSearch
+              placeholder='Keyword...'
+              buttonText='Search'
+              className='w-full'
+            />
           </div>
           <div className='border-b flex flex-col'>
             <Link href={'/'} className='w-full'>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MdApps } from 'react-icons/md'
 import Button from '../button'
-import InputSearch from './inputsearch'
+import InputSearch from '../inputsearch'
 import CustomIcon from './customicon'
 import MenuMobile from './menumobile'
 import MenuUser from './menuuser'
@@ -47,7 +47,11 @@ const Navbar = (props: NavbarProps) => {
             </Button>
           </Link>
 
-          <InputSearch className='ms-auto' />
+          <InputSearch
+            placeholder='Keyword...'
+            buttonText='Search'
+            className='ms-auto'
+          />
           <MenuUser />
         </div>
         <MenuMobile />
