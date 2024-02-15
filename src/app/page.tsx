@@ -1,15 +1,16 @@
-import SelectVisibility from '@/components/selectvisibility'
-import AvatarList from './_ui/avatarlist'
 import Button from '@/components/button'
 import CustomIcon from '@/components/navbar/customicon'
-import { MdAdd, MdMoreHoriz } from 'react-icons/md'
-import MenuBoard from './_ui/menuboard'
+import SelectVisibility from '@/components/selectvisibility'
+import { MdAdd } from 'react-icons/md'
+import AddCardListColumn from './_ui/addcardlistcolumn'
+import AvatarList from './_ui/avatarlist'
 import BoardCardList from './_ui/boardcardlist'
+import MenuBoard from './_ui/menuboard'
 
 export default function Home() {
   return (
-    <div className='px-6'>
-      <header className='flex justify-between pt-[35px]  mb-6'>
+    <>
+      <header className='flex justify-between pt-[35px] mb-6 px-6'>
         <div className='flex items-center'>
           <SelectVisibility className='mr-4 md:mr-[19px]' />
           <AvatarList />
@@ -22,11 +23,12 @@ export default function Home() {
         </div>
         <MenuBoard />
       </header>
-      <main className='bg-[#F8F9FD] rounded-3xl w-full h-[calc(100vh-159px)] px-6 py-7'>
-        <div className='flex'>
-          <BoardCardList title='Backlog 🤔' />
-        </div>
-      </main>
-    </div>
+      <div className='bg-[#F8F9FD] rounded-3xl flex gap-8 w-screen h-[calc(100vh-159px)] py-7 px-6 overflow-x-auto'>
+        <BoardCardList title='Backlog 🤔' />
+        <BoardCardList title='Backlog 🤔' />
+        <BoardCardList title='Backlog 🤔' />
+        <AddCardListColumn />
+      </div>
+    </>
   )
 }

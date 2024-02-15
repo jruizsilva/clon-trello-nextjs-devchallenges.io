@@ -4,7 +4,7 @@ import BoardTag from './boardtag'
 import Avatar from '@/components/avatar'
 import Button from '@/components/button'
 import CustomIcon from '@/components/navbar/customicon'
-import { MdAdd } from 'react-icons/md'
+import { MdAdd, MdAttachFile, MdComment } from 'react-icons/md'
 
 interface Props {
   title: string
@@ -21,7 +21,7 @@ export default function BoardCard({
     <div className='bg-white rounded-lg shadow-md p-3 w-full min-h-[148px]'>
       <div className=''>
         {image && (
-          <div className='w-[219px] h-[130px] rounded-lg bg-red-50 mb-3 flex items-center'>
+          <div className='h-[130px] rounded-lg bg-red-50 mb-3 flex items-center'>
             <Image
               src={image}
               alt='card image'
@@ -42,7 +42,7 @@ export default function BoardCard({
           tags.length > 0 &&
           tags.map((tag) => <BoardTag key={tag.id} tag={tag} />)}
       </div>
-      <footer className='flex justify-between'>
+      <footer className='flex justify-between items-center'>
         <div className='flex gap-2'>
           <Avatar
             src='https://i.pravatar.cc/28?img=10'
@@ -56,7 +56,32 @@ export default function BoardCard({
             className='w-[28px] h-[28px] rounded-lg bg-[#2f80ed] justify-center items-center flex'
           />
         </div>
-        <div></div>
+        <div className='flex gap-2'>
+          <div className='flex gap-1'>
+            <CustomIcon
+              icon={MdComment}
+              fill='#bdbdbd'
+              fontSize={14}
+            />
+            <span
+              className={`font-medium text-[10px] text-[#bdbdbd] ${notoSans.className}`}
+            >
+              2
+            </span>
+          </div>
+          <div className='flex gap-1'>
+            <CustomIcon
+              icon={MdAttachFile}
+              fill='#bdbdbd'
+              fontSize={14}
+            />
+            <span
+              className={`font-medium text-[10px] text-[#bdbdbd] ${notoSans.className}`}
+            >
+              1
+            </span>
+          </div>
+        </div>
       </footer>
     </div>
   )
