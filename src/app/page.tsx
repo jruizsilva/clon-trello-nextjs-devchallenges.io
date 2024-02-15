@@ -4,11 +4,12 @@ import Button from '@/components/button'
 import CustomIcon from '@/components/navbar/customicon'
 import { MdAdd, MdMoreHoriz } from 'react-icons/md'
 import MenuBoard from './_ui/menuboard'
+import BoardCardList from './_ui/boardcardlist'
 
 export default function Home() {
   return (
-    <main>
-      <header className='flex justify-between mt-[35px] px-6'>
+    <div className='px-6'>
+      <header className='flex justify-between pt-[35px]  mb-6'>
         <div className='flex items-center'>
           <SelectVisibility className='mr-4 md:mr-[19px]' />
           <AvatarList />
@@ -21,6 +22,11 @@ export default function Home() {
         </div>
         <MenuBoard />
       </header>
-    </main>
+      <main className='bg-[#F8F9FD] rounded-3xl w-full h-[calc(100vh-159px)] px-6 py-7'>
+        <div className='flex'>
+          <BoardCardList title='Backlog 🤔' />
+        </div>
+      </main>
+    </div>
   )
 }
