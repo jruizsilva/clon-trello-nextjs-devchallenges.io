@@ -1,10 +1,9 @@
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode, forwardRef } from 'react'
 
-interface ButtonProps {
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: ReactNode
   children?: ReactNode
-  className?: string
-  onClick?: () => void
 }
 
 const Button = ({
@@ -21,5 +20,25 @@ const Button = ({
     </button>
   )
 }
+
+export const ButtonWithForwardRef = forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>(function ButtonWithForwardRef(
+  { icon: Icon, children, className, onClick, ...rest },
+  ref
+) {
+  return (
+    <button
+      className={className}
+      onClick={onClick}
+      ref={ref}
+      {...rest}
+    >
+      {Icon ?? null}
+      {children}
+    </button>
+  )
+})
 
 export default Button

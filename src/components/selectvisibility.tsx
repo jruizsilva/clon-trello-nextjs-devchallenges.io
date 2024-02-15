@@ -3,7 +3,7 @@ import { notoSans } from '@/fonts/fonts'
 import { Popover } from '@headlessui/react'
 import { IoMdLock } from 'react-icons/io'
 import { MdLock, MdPublic } from 'react-icons/md'
-import Button from './button'
+import Button, { ButtonWithForwardRef } from './button'
 import CustomIcon from './navbar/customicon'
 import { useState } from 'react'
 import { clsx } from 'clsx'
@@ -27,7 +27,7 @@ export default function SelectVisibility({
   return (
     <Popover className={`relative z-20 ${className}`}>
       <Popover.Button
-        as={Button}
+        as={ButtonWithForwardRef}
         icon={
           <CustomIcon icon={IoMdLock} fontSize={12} fill='#828282' />
         }

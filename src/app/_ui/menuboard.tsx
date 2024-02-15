@@ -1,6 +1,6 @@
 'use client'
 import { Popover } from '@headlessui/react'
-import Button from '@/components/button'
+import Button, { ButtonWithForwardRef } from '@/components/button'
 import CustomIcon from '@/components/navbar/customicon'
 import {
   MdAccountCircle,
@@ -21,7 +21,7 @@ export default function MenuBoard(props: Props): JSX.Element {
     <div>
       <Popover>
         <Popover.Button
-          as={Button}
+          as={ButtonWithForwardRef}
           className='flex items-center gap-2 min-w-[117px] h-[32px] bg-[#f2f2f2] rounded-lg px-2 py-2 hover:bg-[#e2e2e2]'
           icon={
             <CustomIcon
@@ -43,7 +43,7 @@ export default function MenuBoard(props: Props): JSX.Element {
                   Devchallenges Board
                 </h4>
                 <Button
-                  onClick={() => close()}
+                  onClick={async () => close()}
                   icon={
                     <CustomIcon
                       icon={MdClose}
