@@ -1,6 +1,10 @@
 import { notoSans } from '@/fonts/fonts'
 import Image from 'next/image'
 import BoardTag from './boardtag'
+import Avatar from '@/components/avatar'
+import Button from '@/components/button'
+import CustomIcon from '@/components/navbar/customicon'
+import { MdAdd } from 'react-icons/md'
 
 interface Props {
   title: string
@@ -38,6 +42,22 @@ export default function BoardCard({
           tags.length > 0 &&
           tags.map((tag) => <BoardTag key={tag.id} tag={tag} />)}
       </div>
+      <footer className='flex justify-between'>
+        <div className='flex gap-2'>
+          <Avatar
+            src='https://i.pravatar.cc/28?img=10'
+            width={28}
+            height={28}
+          />
+          <Button
+            icon={
+              <CustomIcon icon={MdAdd} fill='white' fontSize={24} />
+            }
+            className='w-[28px] h-[28px] rounded-lg bg-[#2f80ed] justify-center items-center flex'
+          />
+        </div>
+        <div></div>
+      </footer>
     </div>
   )
 }
