@@ -6,13 +6,12 @@ import SelectVisibility from '@/components/selectvisibility'
 import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
-import { IoMdLock } from 'react-icons/io'
 import { MdAdd, MdImage } from 'react-icons/md'
 
 interface AddBoardModalProps {}
 
 const AddBoardModal = (props: AddBoardModalProps) => {
-  let [isOpen, setIsOpen] = useState(true)
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
     setIsOpen(false)

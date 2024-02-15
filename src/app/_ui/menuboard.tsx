@@ -4,6 +4,7 @@ import Button, { ButtonWithForwardRef } from '@/components/button'
 import CustomIcon from '@/components/navbar/customicon'
 import {
   MdAccountCircle,
+  MdAdd,
   MdClose,
   MdDescription,
   MdEdit,
@@ -13,6 +14,7 @@ import LabelWithIcon from './labelwithicon'
 import BoardOwnerDetails from './boardownerdetails'
 import { notoSans, poppins } from '@/fonts/fonts'
 import BoardMember from './boardmember'
+import BoardInviteButton from './boardinvitebutton'
 
 interface Props {}
 
@@ -115,18 +117,35 @@ export default function MenuBoard(props: Props): JSX.Element {
                     a label if you wish.
                   </p>
                 </div>
-                <LabelWithIcon
-                  icon={
-                    <CustomIcon
-                      icon={MdDescription}
-                      fill='#bdbdbd'
-                      fontSize={12}
-                    />
-                  }
-                  className='mb-3'
-                >
-                  Team
-                </LabelWithIcon>
+                <div className='flex items-center gap-4 mb-3'>
+                  <LabelWithIcon
+                    icon={
+                      <CustomIcon
+                        icon={MdDescription}
+                        fill='#bdbdbd'
+                        fontSize={12}
+                      />
+                    }
+                  >
+                    Team
+                  </LabelWithIcon>
+                  <BoardInviteButton
+                    icon={
+                      <CustomIcon
+                        icon={MdAdd}
+                        fill='#828282'
+                        fontSize={12}
+                      />
+                    }
+                    className='w-[62px] h-6 border rounded-lg border-[#bdbdbd] flex items-center justify-center gap-2'
+                  >
+                    <span
+                      className={`font-medium text-[10px] text-[#828282] ${poppins.className}`}
+                    >
+                      Add
+                    </span>
+                  </BoardInviteButton>
+                </div>
                 <div className='flex flex-col gap-[18px]'>
                   <BoardMember isOwner />
                   <BoardMember />

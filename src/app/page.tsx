@@ -15,7 +15,13 @@ export default function Home() {
         <div className='flex items-center gap-3'>
           <SelectVisibility />
           <AvatarList />
-          <BoardInviteButton />
+          <BoardInviteButton
+            icon={
+              <CustomIcon icon={MdAdd} fill='white' fontSize={24} />
+            }
+            className='w-[32px] h-[32px] rounded-lg bg-[#2f80ed] justify-center items-center gap-1 hidden sm:flex'
+            top='top-10'
+          />
         </div>
         <MenuBoard />
       </header>

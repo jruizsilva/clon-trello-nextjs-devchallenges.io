@@ -6,19 +6,35 @@ import { MdAdd, MdSearch } from 'react-icons/md'
 import { poppins } from '@/fonts/fonts'
 import InputSearch from '@/components/inputsearch'
 import SearchUserResult from './searchuserresult'
+import { ReactNode } from 'react'
+import { IconType } from 'react-icons'
 
-interface Props {}
+interface Props {
+  className?: string
+  icon?: ReactNode
+  children?: ReactNode
+  top?: string
+}
 
-export default function BoardInviteButton(props: Props): JSX.Element {
+export default function BoardInviteButton({
+  className,
+  icon,
+  children,
+  top = 'top-8'
+}: Props): JSX.Element {
   return (
-    <Popover className='relative'>
+    <Popover className='relative z-40'>
       <Popover.Button
         as={ButtonWithForwardRef}
-        icon={<CustomIcon icon={MdAdd} fill='white' fontSize={24} />}
-        className='w-[32px] h-[32px] rounded-lg bg-[#2f80ed] justify-center items-center gap-1 hidden sm:flex'
-      ></Popover.Button>
+        icon={icon}
+        className={className}
+      >
+        {children}
+      </Popover.Button>
 
-      <Popover.Panel className='absolute left-0 top-[48px] border border-[#E0E0E0] rounded-xl px-3 py-2 shadow-sm bg-white w-[245px] h-[315px] flex flex-col'>
+      <Popover.Panel
+        className={`absolute left- border border-[#E0E0E0] rounded-xl px-3 py-2 shadow-sm bg-white w-[245px] h-[315px] flex flex-col ${top}`}
+      >
         <h5
           className={`text-[#4f4f4f] text-xs font-semibold ${poppins.className}`}
         >
