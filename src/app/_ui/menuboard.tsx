@@ -12,6 +12,7 @@ import {
 import LabelWithIcon from './labelwithicon'
 import BoardOwnerDetails from './boardownerdetails'
 import { notoSans, poppins } from '@/fonts/fonts'
+import BoardMember from './boardmember'
 
 interface Props {}
 
@@ -34,7 +35,7 @@ export default function MenuBoard(props: Props): JSX.Element {
             Show Menu
           </span>
         </Popover.Button>
-        <Popover.Panel className='absolute bg-white shadow-lg min-w-full sm:min-w-[377px] right-0 top-0 sm:top-[68px] p-5 z-50 h-screen overflow-auto'>
+        <Popover.Panel className='absolute max-w-full w-[377px] bg-white shadow-lg  right-0 top-0 sm:top-[68px] p-5 z-50 sm:h-[calc(100vh-68px)] h-screen overflow-auto'>
           {({ close }) => (
             <>
               <header className='flex justify-between pb-[5px] border-b border-[#E0E0E0]'>
@@ -94,7 +95,7 @@ export default function MenuBoard(props: Props): JSX.Element {
                     </span>
                   </Button>
                 </div>
-                <div className='mt-3'>
+                <div className='my-3'>
                   <p
                     className={`text-sm font-medium text-black ${notoSans.className}`}
                   >
@@ -113,6 +114,23 @@ export default function MenuBoard(props: Props): JSX.Element {
                     labels (with colors) in order to tag each card by
                     a label if you wish.
                   </p>
+                </div>
+                <LabelWithIcon
+                  icon={
+                    <CustomIcon
+                      icon={MdDescription}
+                      fill='#bdbdbd'
+                      fontSize={12}
+                    />
+                  }
+                  className='mb-3'
+                >
+                  Team
+                </LabelWithIcon>
+                <div className='flex flex-col gap-[18px]'>
+                  <BoardMember isOwner />
+                  <BoardMember />
+                  <BoardMember />
                 </div>
               </div>
             </>
