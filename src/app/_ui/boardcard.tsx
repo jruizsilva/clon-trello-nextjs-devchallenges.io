@@ -153,7 +153,7 @@ export default function BoardCard({
                       height={130}
                     />
                   </div>
-                  <div className='flex mt-6'>
+                  <div className='flex mt-6 gap-6'>
                     <div>
                       <h6
                         className={`text-base font-normal text-black mb-1 ${notoSans.className}`}
@@ -335,7 +335,7 @@ export default function BoardCard({
                         </p>
                       </div>
                     </div>
-                    <div className='flex flex-col gap-3'>
+                    <div className='flex flex-col'>
                       <LabelWithIcon
                         icon={
                           <CustomIcon
@@ -344,38 +344,43 @@ export default function BoardCard({
                             fontSize={12}
                           />
                         }
+                        className='mb-3'
                       >
                         Actions
                       </LabelWithIcon>
 
-                      <Button
-                        icon={
-                          <CustomIcon
-                            icon={MdLabel}
-                            fill='#828282'
-                            fontSize={12}
-                          />
-                        }
-                        className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
-                      >
-                        <span className='text-[#828282] text-xs font-medium'>
-                          Labels
-                        </span>
-                      </Button>
-                      <Button
-                        icon={
-                          <CustomIcon
-                            icon={MdInsertPhoto}
-                            fill='#828282'
-                            fontSize={12}
-                          />
-                        }
-                        className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
-                      >
-                        <span className='text-[#828282] text-xs font-medium'>
-                          Cover
-                        </span>
-                      </Button>
+                      {/* Actions */}
+                      <div className='flex flex-col gap-3 mb-[20px]'>
+                        <Button
+                          icon={
+                            <CustomIcon
+                              icon={MdLabel}
+                              fill='#828282'
+                              fontSize={12}
+                            />
+                          }
+                          className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
+                        >
+                          <span className='text-[#828282] text-xs font-medium'>
+                            Labels
+                          </span>
+                        </Button>
+                        <Button
+                          icon={
+                            <CustomIcon
+                              icon={MdInsertPhoto}
+                              fill='#828282'
+                              fontSize={12}
+                            />
+                          }
+                          className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
+                        >
+                          <span className='text-[#828282] text-xs font-medium'>
+                            Cover
+                          </span>
+                        </Button>
+                      </div>
+
                       <LabelWithIcon
                         icon={
                           <CustomIcon
@@ -384,10 +389,15 @@ export default function BoardCard({
                             fontSize={12}
                           />
                         }
+                        className='mb-3'
                       >
                         Members
                       </LabelWithIcon>
-                      <div className='flex flex-col gap-2'>
+
+                      {/* Members */}
+                      <div className='flex flex-col gap-2 mb-4 h-[105px] overflow-y-auto'>
+                        <Member />
+                        <Member />
                         <Member />
                         <Member />
                       </div>
