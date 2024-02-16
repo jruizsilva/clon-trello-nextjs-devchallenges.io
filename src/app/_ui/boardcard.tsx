@@ -13,6 +13,7 @@ import {
   MdComment,
   MdDescription,
   MdEdit,
+  MdGroup,
   MdInsertPhoto,
   MdLabel
 } from 'react-icons/md'
@@ -347,7 +348,7 @@ export default function BoardCard({
                       <Button
                         icon={
                           <CustomIcon
-                            icon={MdAccountCircle}
+                            icon={MdGroup}
                             fill='#828282'
                             fontSize={12}
                           />
