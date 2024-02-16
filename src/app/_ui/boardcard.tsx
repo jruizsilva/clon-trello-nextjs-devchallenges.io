@@ -23,6 +23,7 @@ import BoardOwnerDetails from './boardownerdetails'
 import Member from './member'
 import AddButton from './addbutton'
 import BoardAddMemberToCardButton from './boardaddmembertocardbutton'
+import BoardAddLabelToCardButton from './boardaddlabeltocardbutton'
 
 interface Props {
   title: string
@@ -290,20 +291,7 @@ export default function BoardCard({
 
                         {/* Actions */}
                         <div className='flex flex-col gap-3 mb-[20px]'>
-                          <Button
-                            icon={
-                              <CustomIcon
-                                icon={MdLabel}
-                                fill='#828282'
-                                fontSize={12}
-                              />
-                            }
-                            className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
-                          >
-                            <span className='text-[#828282] text-xs font-medium'>
-                              Labels
-                            </span>
-                          </Button>
+                          <BoardAddLabelToCardButton />
                           <Button
                             icon={
                               <CustomIcon
