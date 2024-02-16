@@ -15,6 +15,7 @@ import {
 } from 'react-icons/md'
 import BoardTag from './boardtag'
 import LabelWithIcon from './labelwithicon'
+import BoardOwnerDetails from './boardownerdetails'
 
 interface Props {
   title: string
@@ -45,7 +46,7 @@ export default function BoardCard({
       >
         <div className=''>
           {image && (
-            <div className='h-[130px] rounded-lg bg-red-50 mb-3 flex items-center'>
+            <div className='h-[130px] rounded-lg mb-3 flex items-center overflow-hidden'>
               <Image
                 src={image}
                 alt='card image'
@@ -138,12 +139,14 @@ export default function BoardCard({
                 leaveTo='opacity-0 scale-95'
               >
                 <Dialog.Panel className='w-[661px] max-w-full transform overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition-all'>
-                  <Image
-                    src='/logo.svg'
-                    alt='card cover image'
-                    width={616}
-                    height={130}
-                  />
+                  <div className='h-[130px] w-[616px] flex items-center overflow-hidden rounded-xl'>
+                    <Image
+                      src='/logo.svg'
+                      alt='card cover image'
+                      width={616}
+                      height={130}
+                    />
+                  </div>
                   <h6
                     className={`text-base font-normal text-black mt-6 mb-1 ${notoSans.className}`}
                   >
@@ -217,7 +220,7 @@ export default function BoardCard({
                     Attachments
                   </LabelWithIcon>
                   <div className='mb-6 flex gap-3'>
-                    <div className='h-[53px] w-[80px] rounded-lg flex items-center'>
+                    <div className='h-[53px] w-[80px] rounded-lg flex items-center overflow-hidden'>
                       <Image
                         src='/logo.svg'
                         alt='preview file uploaded'
@@ -238,7 +241,7 @@ export default function BoardCard({
                     </div>
                   </div>
                   <div className='mb-6 flex gap-3'>
-                    <div className='h-[53px] w-[80px] rounded-lg flex items-center'>
+                    <div className='h-[53px] w-[80px] rounded-lg flex items-center overflow-hidden'>
                       <Image
                         src='/logo.svg'
                         alt='preview file uploaded'
@@ -259,7 +262,7 @@ export default function BoardCard({
                     </div>
                   </div>
 
-                  <div className='relative min-h-[103px] rounded-xl'>
+                  <div className='relative min-h-[103px] rounded-xl mb-[26px]'>
                     <textarea
                       name='comment'
                       className={`relative w-full min-h-[103px] border border-[#e0e0e0] rounded-xl p-3 pl-14 text-sm text-[#bdbdbd] resize-none ${notoSans.className}`}
@@ -274,6 +277,54 @@ export default function BoardCard({
                     <Button className='absolute right-[12px] bottom-[16px] w-[74px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white'>
                       Comment
                     </Button>
+                  </div>
+                  <div className='pb-3 mb-3 border-b'>
+                    <div className='flex justify-between mb-3'>
+                      <BoardOwnerDetails />
+                      <div className='flex gap-3 items-center'>
+                        <button
+                          className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                    <p
+                      className={`text-[#4f4f4f] font-normal text-sm ${notoSans.className}`}
+                    >
+                      “The gladdest moment in human life, methinks, is
+                      a departure into unknown lands.” – Sir Richard
+                      Burton
+                    </p>
+                  </div>
+                  <div className='pb-3 mb-3'>
+                    <div className='flex justify-between mb-3'>
+                      <BoardOwnerDetails />
+                      <div className='flex gap-3 items-center'>
+                        <button
+                          className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                    <p
+                      className={`text-[#4f4f4f] font-normal text-sm ${notoSans.className}`}
+                    >
+                      “The gladdest moment in human life, methinks, is
+                      a departure into unknown lands.” – Sir Richard
+                      Burton
+                    </p>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
