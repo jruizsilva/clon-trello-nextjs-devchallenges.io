@@ -153,24 +153,71 @@ export default function BoardCard({
                       height={130}
                     />
                   </div>
-                  <div className='flex mt-6 gap-6'>
-                    <div>
-                      <h6
-                        className={`text-base font-normal text-black mb-1 ${notoSans.className}`}
-                      >
-                        ✋🏿 Move anything that is actually started here
-                      </h6>
-                      <p
-                        className={`font-semibold text-[#bdbdbd] text-[10px] mb-5 ${poppins.className}`}
-                      >
-                        in list{' '}
-                        <span
-                          className={`text-[#333] font-semibold ${poppins.className}`}
+                  <div className='mt-6'>
+                    <div className='flex gap-6'>
+                      <div>
+                        <h6
+                          className={`text-base font-normal text-black mb-1 ${notoSans.className}`}
                         >
-                          In Progress
-                        </span>
-                      </p>
-                      <div className='flex items-center gap-4'>
+                          ✋🏿 Move anything that is actually started
+                          here
+                        </h6>
+                        <p
+                          className={`font-semibold text-[#bdbdbd] text-[10px] mb-5 ${poppins.className}`}
+                        >
+                          in list{' '}
+                          <span
+                            className={`text-[#333] font-semibold ${poppins.className}`}
+                          >
+                            In Progress
+                          </span>
+                        </p>
+                        <div className='flex items-center gap-4'>
+                          <LabelWithIcon
+                            icon={
+                              <CustomIcon
+                                icon={MdDescription}
+                                fill='#bdbdbd'
+                                fontSize={12}
+                              />
+                            }
+                          >
+                            Description
+                          </LabelWithIcon>
+                          <Button
+                            icon={
+                              <CustomIcon
+                                icon={MdEdit}
+                                fill='#828282'
+                                fontSize={12}
+                              />
+                            }
+                            className='w-[62px] h-6 border rounded-lg border-[#bdbdbd] flex items-center justify-center gap-2'
+                          >
+                            <span
+                              className={`font-medium text-[10px] text-[#828282] ${poppins.className}`}
+                            >
+                              Edit
+                            </span>
+                          </Button>
+                        </div>
+                        <div className='my-3'>
+                          <p
+                            className={`font-normal text-sm text-black ${poppins.className}`}
+                          >
+                            Ideas are created and share here through a
+                            card. Here you can describe what
+                            you&apos;d like to accomplish. For example
+                            you can follow three simple questions to
+                            create the card related to your idea: *
+                            Why ? (Why do you wish to do it ?) * What
+                            ? (What it is it, what are the goals, who
+                            is concerned) * How ? (How do you think
+                            you can do it ? What are the required
+                            steps ?) After creation, you can move your
+                            card to the todo list.
+                          </p>
+                        </div>
                         <LabelWithIcon
                           icon={
                             <CustomIcon
@@ -179,229 +226,187 @@ export default function BoardCard({
                               fontSize={12}
                             />
                           }
+                          className='mb-3'
                         >
-                          Description
+                          Attachments
                         </LabelWithIcon>
-                        <Button
+                        <div className='mb-6 flex gap-3'>
+                          <div className='h-[53px] w-[80px] rounded-lg flex items-center overflow-hidden'>
+                            <Image
+                              src='/logo.svg'
+                              alt='preview file uploaded'
+                              width={80}
+                              height={53}
+                            />
+                          </div>
+                          <div className='flex flex-col'>
+                            <p className='text-[#bdbdbd] text-[8px]'>
+                              Added July 5, 2020
+                            </p>
+                            <p className='text-black text-[10px] mb-1'>
+                              Reasoning by Ranganath Krishnamani
+                            </p>
+                            <Button className='border rounded-lg border-[#bdbdbd] text-[#828282] w-[62px] h-[24px] text-[10px] font-medium'>
+                              Download
+                            </Button>
+                          </div>
+                        </div>
+                        <div className='mb-6 flex gap-3'>
+                          <div className='h-[53px] w-[80px] rounded-lg flex items-center overflow-hidden'>
+                            <Image
+                              src='/logo.svg'
+                              alt='preview file uploaded'
+                              width={80}
+                              height={53}
+                            />
+                          </div>
+                          <div className='flex flex-col'>
+                            <p className='text-[#bdbdbd] text-[8px]'>
+                              Added July 5, 2020
+                            </p>
+                            <p className='text-black text-[10px] mb-1'>
+                              Reasoning by Ranganath Krishnamani
+                            </p>
+                            <Button className='border rounded-lg border-[#bdbdbd] text-[#828282] w-[62px] h-[24px] text-[10px] font-medium'>
+                              Download
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='flex flex-col'>
+                        <LabelWithIcon
                           icon={
                             <CustomIcon
-                              icon={MdEdit}
-                              fill='#828282'
+                              icon={MdAccountCircle}
+                              fill='#bdbdbdbd'
                               fontSize={12}
                             />
                           }
-                          className='w-[62px] h-6 border rounded-lg border-[#bdbdbd] flex items-center justify-center gap-2'
+                          className='mb-3'
                         >
-                          <span
-                            className={`font-medium text-[10px] text-[#828282] ${poppins.className}`}
-                          >
-                            Edit
-                          </span>
-                        </Button>
-                      </div>
-                      <div className='my-3'>
-                        <p
-                          className={`font-normal text-sm text-black ${poppins.className}`}
-                        >
-                          Ideas are created and share here through a
-                          card. Here you can describe what you&apos;d
-                          like to accomplish. For example you can
-                          follow three simple questions to create the
-                          card related to your idea: * Why ? (Why do
-                          you wish to do it ?) * What ? (What it is
-                          it, what are the goals, who is concerned) *
-                          How ? (How do you think you can do it ? What
-                          are the required steps ?) After creation,
-                          you can move your card to the todo list.
-                        </p>
-                      </div>
-                      <LabelWithIcon
-                        icon={
-                          <CustomIcon
-                            icon={MdDescription}
-                            fill='#bdbdbd'
-                            fontSize={12}
-                          />
-                        }
-                        className='mb-3'
-                      >
-                        Attachments
-                      </LabelWithIcon>
-                      <div className='mb-6 flex gap-3'>
-                        <div className='h-[53px] w-[80px] rounded-lg flex items-center overflow-hidden'>
-                          <Image
-                            src='/logo.svg'
-                            alt='preview file uploaded'
-                            width={80}
-                            height={53}
-                          />
-                        </div>
-                        <div className='flex flex-col'>
-                          <p className='text-[#bdbdbd] text-[8px]'>
-                            Added July 5, 2020
-                          </p>
-                          <p className='text-black text-[10px] mb-1'>
-                            Reasoning by Ranganath Krishnamani
-                          </p>
-                          <Button className='border rounded-lg border-[#bdbdbd] text-[#828282] w-[62px] h-[24px] text-[10px] font-medium'>
-                            Download
-                          </Button>
-                        </div>
-                      </div>
-                      <div className='mb-6 flex gap-3'>
-                        <div className='h-[53px] w-[80px] rounded-lg flex items-center overflow-hidden'>
-                          <Image
-                            src='/logo.svg'
-                            alt='preview file uploaded'
-                            width={80}
-                            height={53}
-                          />
-                        </div>
-                        <div className='flex flex-col'>
-                          <p className='text-[#bdbdbd] text-[8px]'>
-                            Added July 5, 2020
-                          </p>
-                          <p className='text-black text-[10px] mb-1'>
-                            Reasoning by Ranganath Krishnamani
-                          </p>
-                          <Button className='border rounded-lg border-[#bdbdbd] text-[#828282] w-[62px] h-[24px] text-[10px] font-medium'>
-                            Download
-                          </Button>
-                        </div>
-                      </div>
+                          Actions
+                        </LabelWithIcon>
 
-                      <div className='relative min-h-[103px] rounded-xl mb-[26px]'>
-                        <textarea
-                          name='comment'
-                          className={`relative w-full min-h-[103px] border border-[#e0e0e0] rounded-xl p-3 pl-14 text-sm text-[#bdbdbd] resize-none ${notoSans.className}`}
-                          placeholder='Write a comment...'
-                        ></textarea>
-                        <Avatar
-                          src='https://i.pravatar.cc/32?img=10'
-                          width={32}
-                          height={32}
-                          className='absolute top-3 left-3'
-                        />
-                        <Button className='absolute right-[12px] bottom-[16px] w-[74px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white'>
-                          Comment
-                        </Button>
-                      </div>
-                      <div className='pb-3 mb-3 border-b'>
-                        <div className='flex justify-between mb-3'>
-                          <BoardOwnerDetails />
-                          <div className='flex gap-3 items-center'>
-                            <button
-                              className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
-                            >
-                              Edit
-                            </button>
-                            <button
-                              className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
-                            >
-                              Delete
-                            </button>
-                          </div>
+                        {/* Actions */}
+                        <div className='flex flex-col gap-3 mb-[20px]'>
+                          <Button
+                            icon={
+                              <CustomIcon
+                                icon={MdLabel}
+                                fill='#828282'
+                                fontSize={12}
+                              />
+                            }
+                            className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
+                          >
+                            <span className='text-[#828282] text-xs font-medium'>
+                              Labels
+                            </span>
+                          </Button>
+                          <Button
+                            icon={
+                              <CustomIcon
+                                icon={MdInsertPhoto}
+                                fill='#828282'
+                                fontSize={12}
+                              />
+                            }
+                            className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
+                          >
+                            <span className='text-[#828282] text-xs font-medium'>
+                              Cover
+                            </span>
+                          </Button>
                         </div>
-                        <p
-                          className={`text-[#4f4f4f] font-normal text-sm ${notoSans.className}`}
+
+                        <LabelWithIcon
+                          icon={
+                            <CustomIcon
+                              icon={MdGroup}
+                              fill='#bdbdbdbd'
+                              fontSize={12}
+                            />
+                          }
+                          className='mb-3'
                         >
-                          “The gladdest moment in human life,
-                          methinks, is a departure into unknown
-                          lands.” – Sir Richard Burton
-                        </p>
-                      </div>
-                      <div className='pb-3 mb-3'>
-                        <div className='flex justify-between mb-3'>
-                          <BoardOwnerDetails />
-                          <div className='flex gap-3 items-center'>
-                            <button
-                              className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
-                            >
-                              Edit
-                            </button>
-                            <button
-                              className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
-                            >
-                              Delete
-                            </button>
-                          </div>
+                          Members
+                        </LabelWithIcon>
+
+                        {/* Members */}
+                        <div className='flex flex-col gap-2 mb-4 h-[105px] overflow-y-auto'>
+                          <Member />
+                          <Member />
+                          <Member />
+                          <Member />
                         </div>
-                        <p
-                          className={`text-[#4f4f4f] font-normal text-sm ${notoSans.className}`}
-                        >
-                          “The gladdest moment in human life,
-                          methinks, is a departure into unknown
-                          lands.” – Sir Richard Burton
-                        </p>
+                        <AddButton>Assign a member</AddButton>
                       </div>
                     </div>
-                    <div className='flex flex-col'>
-                      <LabelWithIcon
-                        icon={
-                          <CustomIcon
-                            icon={MdAccountCircle}
-                            fill='#bdbdbdbd'
-                            fontSize={12}
-                          />
-                        }
-                        className='mb-3'
-                      >
-                        Actions
-                      </LabelWithIcon>
-
-                      {/* Actions */}
-                      <div className='flex flex-col gap-3 mb-[20px]'>
-                        <Button
-                          icon={
-                            <CustomIcon
-                              icon={MdLabel}
-                              fill='#828282'
-                              fontSize={12}
-                            />
-                          }
-                          className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
-                        >
-                          <span className='text-[#828282] text-xs font-medium'>
-                            Labels
-                          </span>
-                        </Button>
-                        <Button
-                          icon={
-                            <CustomIcon
-                              icon={MdInsertPhoto}
-                              fill='#828282'
-                              fontSize={12}
-                            />
-                          }
-                          className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
-                        >
-                          <span className='text-[#828282] text-xs font-medium'>
-                            Cover
-                          </span>
-                        </Button>
+                  </div>
+                  <div>
+                    <div className='relative min-h-[103px] rounded-xl mb-[26px]'>
+                      <textarea
+                        name='comment'
+                        className={`relative w-full min-h-[103px] border border-[#e0e0e0] rounded-xl p-3 pl-14 text-sm text-[#bdbdbd] resize-none ${notoSans.className}`}
+                        placeholder='Write a comment...'
+                      ></textarea>
+                      <Avatar
+                        src='https://i.pravatar.cc/32?img=10'
+                        width={32}
+                        height={32}
+                        className='absolute top-3 left-3'
+                      />
+                      <Button className='absolute right-[12px] bottom-[16px] w-[74px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white'>
+                        Comment
+                      </Button>
+                    </div>
+                    <div className='pb-3 mb-3 border-b'>
+                      <div className='flex justify-between mb-3'>
+                        <BoardOwnerDetails />
+                        <div className='flex gap-3 items-center'>
+                          <button
+                            className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </div>
-
-                      <LabelWithIcon
-                        icon={
-                          <CustomIcon
-                            icon={MdGroup}
-                            fill='#bdbdbdbd'
-                            fontSize={12}
-                          />
-                        }
-                        className='mb-3'
+                      <p
+                        className={`text-[#4f4f4f] font-normal text-sm ${notoSans.className}`}
                       >
-                        Members
-                      </LabelWithIcon>
-
-                      {/* Members */}
-                      <div className='flex flex-col gap-2 mb-4 h-[105px] overflow-y-auto'>
-                        <Member />
-                        <Member />
-                        <Member />
-                        <Member />
+                        “The gladdest moment in human life, methinks,
+                        is a departure into unknown lands.” – Sir
+                        Richard Burton
+                      </p>
+                    </div>
+                    <div className='pb-3 mb-3'>
+                      <div className='flex justify-between mb-3'>
+                        <BoardOwnerDetails />
+                        <div className='flex gap-3 items-center'>
+                          <button
+                            className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className={`text-[#828282] font-medium text-[10px] ${poppins.className}`}
+                          >
+                            Delete
+                          </button>
+                        </div>
                       </div>
-                      <AddButton>Assign a member</AddButton>
+                      <p
+                        className={`text-[#4f4f4f] font-normal text-sm ${notoSans.className}`}
+                      >
+                        “The gladdest moment in human life, methinks,
+                        is a departure into unknown lands.” – Sir
+                        Richard Burton
+                      </p>
                     </div>
                   </div>
                 </Dialog.Panel>
