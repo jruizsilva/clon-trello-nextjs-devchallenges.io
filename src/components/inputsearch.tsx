@@ -1,5 +1,9 @@
 import { IconType } from 'react-icons'
 import Button from './button'
+import clsx from 'clsx'
+import ButtonSearch from './buttonsearch'
+import CustomIcon from './navbar/customicon'
+import { MdSearch } from 'react-icons/md'
 
 interface Props {
   buttonText?: string
@@ -11,7 +15,7 @@ interface Props {
 }
 
 const InputSearch = ({
-  buttonText = 'Search',
+  buttonText,
   placeholder,
   className,
   onClick,
@@ -25,12 +29,16 @@ const InputSearch = ({
         className='py-2 ps-3 w-full h-[34px] text-[10px] shadow-md rounded-lg'
         placeholder={placeholder}
       />
-      <Button
-        className={`absolute right-[2px] bottom-[2px] top-[2px] w-[74px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white ${btnClassName}`}
+      {/* <Button
+        className={clsx(
+          { 'w-[74px]': buttonText !== undefined },
+          `absolute right-[2px] bottom-[2px] top-[2px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white ${btnClassName}`
+        )}
         onClick={onClick}
       >
         {Icon ? <Icon className='w-[16px] h-[16px]' /> : buttonText}
-      </Button>
+      </Button> */}
+      <ButtonSearch icon={<CustomIcon icon={MdSearch} />} />
     </div>
   )
 }
