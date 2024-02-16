@@ -258,6 +258,23 @@ export default function BoardCard({
                       </Button>
                     </div>
                   </div>
+
+                  <div className='relative min-h-[103px] rounded-xl'>
+                    <textarea
+                      name='comment'
+                      className={`relative w-full min-h-[103px] border border-[#e0e0e0] rounded-xl p-3 pl-14 text-sm text-[#bdbdbd] resize-none ${notoSans.className}`}
+                      placeholder='Write a comment...'
+                    ></textarea>
+                    <Avatar
+                      src='https://i.pravatar.cc/32?img=10'
+                      width={32}
+                      height={32}
+                      className='absolute top-3 left-3'
+                    />
+                    <Button className='absolute right-[12px] bottom-[16px] w-[74px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white'>
+                      Comment
+                    </Button>
+                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
