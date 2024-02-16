@@ -21,15 +21,6 @@ export default function BoardCardList({ title }: Props): JSX.Element {
         >
           {title}
         </h3>
-        {/* <Button
-          icon={
-            <CustomIcon
-              icon={MdMoreHoriz}
-              fontSize={20}
-              fill='#828282'
-            />
-          }
-        /> */}
         <BoardCardListMenu />
       </header>
       <div className='mb-6 flex flex-col gap-6'>

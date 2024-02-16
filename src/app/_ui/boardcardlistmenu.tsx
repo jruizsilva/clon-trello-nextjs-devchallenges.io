@@ -20,14 +20,14 @@ export default function BoardCardListMenu(props: Props): JSX.Element {
         }
       ></Popover.Button>
 
-      <Popover.Panel className='absolute right-0 w-[151px] h-[80px] bg-white border shadow-md px-3 pt-[14px] pb-[18px] flex flex-col rounded-xl'>
-        <span className='mb-3 text-[#828282] font-medium text-[10px]  hover:cursor-pointer hover:underline'>
+      <Popover.Panel className='absolute right-0 w-[151px] h-[80px] bg-white border shadow-md p-3 rounded-xl'>
+        <button className='mb-2 text-[#828282] font-medium text-[10px] hover:underline'>
           Rename
-        </span>
-        <span className='border-b'></span>
-        <span className='mt-[10px] text-[#828282] font-medium text-[10px] hover:cursor-pointer hover:underline'>
+        </button>
+        <span className='block border-b'></span>
+        <button className='mt-2 text-[#828282] font-medium text-[10px] hover:underline'>
           Delete this list
-        </span>
+        </button>
       </Popover.Panel>
     </Popover>
   )
