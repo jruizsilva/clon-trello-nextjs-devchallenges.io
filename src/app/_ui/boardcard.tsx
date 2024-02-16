@@ -82,12 +82,6 @@ export default function BoardCard({
               width={28}
               height={28}
             />
-            <Button
-              icon={
-                <CustomIcon icon={MdAdd} fill='white' fontSize={24} />
-              }
-              className='w-[28px] h-[28px] rounded-lg bg-[#2f80ed] justify-center items-center flex'
-            />
           </div>
           <div className='flex gap-2'>
             <div className='flex gap-1'>
