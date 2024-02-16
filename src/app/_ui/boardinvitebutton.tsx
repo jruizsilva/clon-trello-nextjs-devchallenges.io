@@ -45,12 +45,7 @@ export default function BoardInviteButton({
         >
           Search users you want to invite to
         </p>
-        <InputSearch
-          placeholder='User...'
-          className='w-full mb-2'
-          icon={MdSearch}
-          btnClassName='w-[30px] h-[30px] flex items-center justify-center'
-        />
+        <InputSearch placeholder='User...' className='w-full mb-2' />
         <SearchUserResult />
         <Button
           className={`w-[74px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white mx-auto mt-auto`}

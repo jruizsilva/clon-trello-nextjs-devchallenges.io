@@ -47,11 +47,7 @@ const Navbar = (props: NavbarProps) => {
             </Button>
           </Link>
 
-          <InputSearch
-            placeholder='Keyword...'
-            buttonText='Search'
-            className='ms-auto'
-          />
+          <InputSearch placeholder='Keyword...' className='ms-auto' />
           <MenuUser />
         </div>
         <MenuMobile />

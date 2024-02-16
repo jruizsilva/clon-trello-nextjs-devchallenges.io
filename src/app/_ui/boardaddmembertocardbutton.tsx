@@ -45,12 +45,7 @@ export default function BoardAddMemberToCardButton({
         >
           Assign members to this card
         </p>
-        <InputSearch
-          placeholder='User...'
-          className='mb-2'
-          icon={MdSearch}
-          btnClassName='flex items-center justify-center basis-[30px]'
-        />
+        <InputSearch placeholder='User...' className='w-full mb-2' />
         <SearchUserResult />
         <Button
           className={`w-[74px] h-[30px] rounded-lg bg-[#2f80ed] text-[10px] text-white mx-auto mt-auto`}

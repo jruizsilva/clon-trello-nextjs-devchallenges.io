@@ -23,7 +23,6 @@ export default function MenuMobile(props: Props): JSX.Element {
             </h1>
             <InputSearch
               placeholder='Keyword...'
-              buttonText='Search'
               className='w-full'
             />
           </div>
