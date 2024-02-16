@@ -7,6 +7,8 @@ import AddButton from './addbutton'
 import BoardInviteButton from './boardinvitebutton'
 import { Menu } from '@headlessui/react'
 import BoardCardListMenu from './boardcardlistmenu'
+import BoardAddLabelToCardButton from './boardaddlabeltocardbutton'
+import BoardAddAnotherCardButton from './boardaddanothercardbutton'
 
 interface Props {
   title: string
@@ -50,7 +52,7 @@ export default function BoardCardList({ title }: Props): JSX.Element {
         />
       </div>
       <footer className='pb-6'>
-        <AddButton>Add another card</AddButton>
+        <BoardAddAnotherCardButton />
       </footer>
     </div>
   )
