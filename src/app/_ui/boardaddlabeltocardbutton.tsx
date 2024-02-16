@@ -1,15 +1,12 @@
 'use client'
-import { Popover } from '@headlessui/react'
-import Button, { ButtonWithForwardRef } from '../../components/button'
 import CustomIcon from '@/components/navbar/customicon'
-import { MdAdd, MdLabel, MdSearch } from 'react-icons/md'
 import { poppins } from '@/fonts/fonts'
-import InputSearch from '@/components/inputsearch'
-import SearchUserResult from './searchuserresult'
+import { Popover } from '@headlessui/react'
 import { ReactNode } from 'react'
-import { IconType } from 'react-icons'
-import LabelWithIcon from './labelwithicon'
+import { MdLabel } from 'react-icons/md'
+import Button, { ButtonWithForwardRef } from '../../components/button'
 import BoardTag from './boardtag'
+import LabelWithIcon from './labelwithicon'
 
 interface Props {
   className?: string
@@ -35,7 +32,7 @@ export default function BoardAddLabelToCardButton({
       </Popover.Button>
 
       <Popover.Panel
-        className={`absolute right-0 border border-[#E0E0E0] rounded-xl px-3 py-2 shadow-sm bg-white w-[245px] h-[315px] flex flex-col ${top}`}
+        className={`absolute right-0 border border-[#E0E0E0] rounded-xl px-3 py-2 shadow-sm bg-white w-[245px] h-[355px] flex flex-col ${top}`}
       >
         <h5
           className={`text-[#4f4f4f] text-xs font-semibold ${poppins.className}`}
@@ -61,9 +58,36 @@ export default function BoardAddLabelToCardButton({
           icon={
             <CustomIcon icon={MdLabel} fill='#bdbdbd' fontSize={12} />
           }
-          className='mb-3'
+          className='mb-1'
         >
           Available
+        </LabelWithIcon>
+        <div className='flex gap-2 mb-3'>
+          <BoardTag
+            tag={{
+              bg: 'bg-[#D5E6FB]',
+              color: 'text-[#2F80ED]',
+              id: 1,
+              name: 'Technical'
+            }}
+          />
+          <BoardTag
+            tag={{
+              bg: 'bg-[#D3EADD]',
+              color: 'text-[#219653]',
+              id: 2,
+              name: 'Design'
+            }}
+          />
+        </div>
+
+        <LabelWithIcon
+          icon={
+            <CustomIcon icon={MdLabel} fill='#bdbdbd' fontSize={12} />
+          }
+          className='mb-1'
+        >
+          Applied
         </LabelWithIcon>
         <div className='flex gap-2'>
           <BoardTag
