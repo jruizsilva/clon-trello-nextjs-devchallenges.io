@@ -1,18 +1,15 @@
 'use client'
 import CustomIcon from '@/components/navbar/customicon'
-import { notoSans, poppins } from '@/fonts/fonts'
+import { notoSans } from '@/fonts/fonts'
 import { Popover } from '@headlessui/react'
-import { ReactNode } from 'react'
-import { MdAdd, MdLabel } from 'react-icons/md'
+import { MdAdd } from 'react-icons/md'
 import Button, { ButtonWithForwardRef } from '../../components/button'
-import BoardTag from './boardtag'
-import LabelWithIcon from './labelwithicon'
 
 interface Props {}
 
 export default function BoardAddAnotherCardButton({}: Props): JSX.Element {
   return (
-    <Popover className='relative z-50 '>
+    <Popover className='relative  '>
       <Popover.Button
         as={ButtonWithForwardRef}
         className='h-8 flex justify-between bg-[#DAE4FD]  items-center pl-3 pr-2 rounded-lg w-full'

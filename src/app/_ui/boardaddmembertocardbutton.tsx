@@ -23,7 +23,7 @@ export default function BoardAddMemberToCardButton({
   top = 'top-8'
 }: Props): JSX.Element {
   return (
-    <Popover className='relative z-40'>
+    <Popover className='relative '>
       <Popover.Button
         as={ButtonWithForwardRef}
         icon={icon}
@@ -33,7 +33,7 @@ export default function BoardAddMemberToCardButton({
       </Popover.Button>
 
       <Popover.Panel
-        className={`absolute right-0 border border-[#E0E0E0] rounded-xl px-3 py-2 shadow-sm bg-white w-[245px] h-[315px] flex flex-col ${top}`}
+        className={`absolute right-0 z-30 border border-[#E0E0E0] rounded-xl px-3 py-2 shadow-sm bg-white w-[245px] h-[315px] flex flex-col ${top}`}
       >
         <h5
           className={`text-[#4f4f4f] text-xs font-semibold ${poppins.className}`}

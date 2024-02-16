@@ -37,7 +37,7 @@ export default function MenuBoard(props: Props): JSX.Element {
             Show Menu
           </span>
         </Popover.Button>
-        <Popover.Panel className='absolute max-w-full w-[377px] bg-white shadow-lg  right-0 top-0 sm:top-[68px] p-5 z-50 sm:h-[calc(100vh-68px)] h-screen overflow-auto'>
+        <Popover.Panel className='absolute z-20 max-w-full w-[377px] bg-white shadow-lg  right-0 top-0 sm:top-[68px] p-5  sm:h-[calc(100vh-68px)] h-screen overflow-auto'>
           {({ close }) => (
             <>
               <header className='flex justify-between pb-[5px] border-b border-[#E0E0E0]'>

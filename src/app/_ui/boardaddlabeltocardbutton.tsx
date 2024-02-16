@@ -18,7 +18,7 @@ export default function BoardAddLabelToCardButton({
   top = 'top-10'
 }: Props): JSX.Element {
   return (
-    <Popover className='relative z-50'>
+    <Popover className='relative z-30'>
       <Popover.Button
         as={ButtonWithForwardRef}
         icon={

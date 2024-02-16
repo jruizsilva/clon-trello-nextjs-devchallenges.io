@@ -23,7 +23,7 @@ export default function BoardInviteButton({
   top = 'top-8'
 }: Props): JSX.Element {
   return (
-    <Popover className='relative z-40'>
+    <Popover className='relative z-20'>
       <Popover.Button
         as={ButtonWithForwardRef}
         icon={icon}

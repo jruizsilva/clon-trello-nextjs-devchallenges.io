@@ -25,7 +25,7 @@ export default function SelectVisibility({
   }
 
   return (
-    <Popover className={`relative z-20 ${className}`}>
+    <Popover className={`relative  ${className}`}>
       <Popover.Button
         as={ButtonWithForwardRef}
         icon={
