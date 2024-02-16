@@ -20,6 +20,8 @@ import {
 import BoardTag from './boardtag'
 import LabelWithIcon from './labelwithicon'
 import BoardOwnerDetails from './boardownerdetails'
+import Member from './member'
+import AddButton from './addbutton'
 
 interface Props {
   title: string
@@ -345,20 +347,7 @@ export default function BoardCard({
                       >
                         Actions
                       </LabelWithIcon>
-                      <Button
-                        icon={
-                          <CustomIcon
-                            icon={MdGroup}
-                            fill='#828282'
-                            fontSize={12}
-                          />
-                        }
-                        className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
-                      >
-                        <span className='text-[#828282] text-xs font-medium'>
-                          Members
-                        </span>
-                      </Button>
+
                       <Button
                         icon={
                           <CustomIcon
@@ -387,6 +376,22 @@ export default function BoardCard({
                           Cover
                         </span>
                       </Button>
+                      <LabelWithIcon
+                        icon={
+                          <CustomIcon
+                            icon={MdGroup}
+                            fill='#bdbdbdbd'
+                            fontSize={12}
+                          />
+                        }
+                      >
+                        Members
+                      </LabelWithIcon>
+                      <div className='flex flex-col gap-2'>
+                        <Member />
+                        <Member />
+                      </div>
+                      <AddButton>Assign a member</AddButton>
                     </div>
                   </div>
                 </Dialog.Panel>
