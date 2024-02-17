@@ -24,7 +24,7 @@ export default function MenuBoard(props: Props): JSX.Element {
       <Popover>
         <Popover.Button
           as={ButtonWithForwardRef}
-          className='flex items-center gap-2 min-w-[117px] h-[32px] bg-[#f2f2f2] rounded-lg px-2 py-2 hover:bg-[#e2e2e2]'
+          className='flex items-center justify-center gap-2 px-3 h-[32px] bg-[#f2f2f2] rounded-lg hover:bg-[#e2e2e2]'
           icon={
             <CustomIcon
               icon={MdMoreHoriz}

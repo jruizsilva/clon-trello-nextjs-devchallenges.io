@@ -1,14 +1,12 @@
 'use client'
+import InputSearch from '@/components/inputsearch'
 import CustomIcon from '@/components/navbar/customicon'
 import { poppins } from '@/fonts/fonts'
 import { Popover } from '@headlessui/react'
-import { ReactNode } from 'react'
-import { MdInsertPhoto, MdLabel } from 'react-icons/md'
-import Button, { ButtonWithForwardRef } from '../../components/button'
-import BoardTag from './boardtag'
-import LabelWithIcon from './labelwithicon'
-import InputSearch from '@/components/inputsearch'
 import Image from 'next/image'
+import { ReactNode } from 'react'
+import { MdInsertPhoto } from 'react-icons/md'
+import Button, { ButtonWithForwardRef } from './button'
 
 interface Props {
   className?: string
@@ -17,7 +15,8 @@ interface Props {
 }
 
 export default function BoardAddCoverToCardButton({
-  top = 'top-10'
+  top = 'top-10',
+  className
 }: Props): JSX.Element {
   return (
     <Popover className='relative z-20'>
@@ -30,7 +29,7 @@ export default function BoardAddCoverToCardButton({
             fontSize={12}
           />
         }
-        className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
+        className={`rounded-lg bg-[#F2F2F2] px-3 h-[32px] flex items-center gap-2 justify-center ${className}`}
       >
         <span className='text-[#828282] text-xs font-medium'>
           Cover

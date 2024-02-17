@@ -24,7 +24,7 @@ import Member from './member'
 import AddButton from './addbutton'
 import BoardAddMemberToCardButton from './boardaddmembertocardbutton'
 import BoardAddLabelToCardButton from './boardaddlabeltocardbutton'
-import BoardAddCoverToCardButton from './boardaddcovertocardbutton'
+import BoardAddCoverToCardButton from '../../components/boardaddcovertocardbutton'
 
 interface Props {
   title: string

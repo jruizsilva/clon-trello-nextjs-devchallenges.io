@@ -1,5 +1,6 @@
 'use client'
 
+import BoardAddCoverToCardButton from '@/components/boardaddcovertocardbutton'
 import Button from '@/components/button'
 import CustomIcon from '@/components/navbar/customicon'
 import SelectVisibility from '@/components/selectvisibility'
@@ -73,21 +74,8 @@ const AddBoardModal = (props: AddBoardModalProps) => {
                     className='py-2 ps-3 w-full h-[34px] text-[10px] shadow-md rounded-lg border mb-[21px]'
                     placeholder='Add board title...'
                   />
-                  <div className='flex gap-5 mb-[22px]'>
-                    <Button
-                      icon={
-                        <CustomIcon
-                          icon={MdImage}
-                          fontSize={12}
-                          fill='#828282'
-                        />
-                      }
-                      className='flex items-center gap-2 min-w-[120px] h-[32px] bg-[#f2f2f2] rounded-lg px-4 py-2 hover:bg-[#e2e2e2]'
-                    >
-                      <span className='text-xs font-medium text-[#828282]'>
-                        Cover
-                      </span>
-                    </Button>
+                  <div className='flex gap-3 mb-[22px]'>
+                    <BoardAddCoverToCardButton />
                     <SelectVisibility />
                   </div>
                   <div className='flex gap-4'>
