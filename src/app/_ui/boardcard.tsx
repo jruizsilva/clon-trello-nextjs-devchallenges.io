@@ -24,6 +24,7 @@ import Member from './member'
 import AddButton from './addbutton'
 import BoardAddMemberToCardButton from './boardaddmembertocardbutton'
 import BoardAddLabelToCardButton from './boardaddlabeltocardbutton'
+import BoardAddCoverToCardButton from './boardaddcovertocardbutton'
 
 interface Props {
   title: string
@@ -114,7 +115,7 @@ export default function BoardCard({
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as='div'
-          className='relative z-20'
+          className='relative z-30'
           onClose={closeModal}
         >
           <Transition.Child
@@ -286,20 +287,7 @@ export default function BoardCard({
                         {/* Actions */}
                         <div className='flex flex-col gap-3 mb-[20px]'>
                           <BoardAddLabelToCardButton />
-                          <Button
-                            icon={
-                              <CustomIcon
-                                icon={MdInsertPhoto}
-                                fill='#828282'
-                                fontSize={12}
-                              />
-                            }
-                            className='rounded-lg bg-[#F2F2F2] w-[148px] h-[32px] flex items-center gap-3 pl-4'
-                          >
-                            <span className='text-[#828282] text-xs font-medium'>
-                              Cover
-                            </span>
-                          </Button>
+                          <BoardAddCoverToCardButton />
                         </div>
 
                         <LabelWithIcon
